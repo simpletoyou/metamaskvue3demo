@@ -4,7 +4,7 @@
  * @Author: simpletoyou
  * @Date: 2022-04-21 14:35:01
  * @LastEditors: simpletoyou
- * @LastEditTime: 2022-04-21 15:09:41
+ * @LastEditTime: 2022-04-21 15:32:55
 -->
 <!--
  * 严肃声明：
@@ -18,6 +18,7 @@
 
 <template>
   <div class="index">
+    <p-header />
     {{ categoryList }}
   </div>
 </template>
@@ -25,9 +26,13 @@
 <script>
 import { reactive, onMounted, toRefs, getCurrentInstance } from 'vue'
 import { setLocal, getLocal } from '@/common/js/utils'
+import pHeader from './PageHeader.vue'
 
 export default {
   name: 'home',
+  components: {
+    pHeader
+  },
 
   setup() {
 
@@ -79,9 +84,6 @@ export default {
     })
 
 
-    //  const  ii  = getCurrentInstance()
-    //   console.log('ii', ii)
-
 
 
     onMounted(() => {
@@ -92,11 +94,6 @@ export default {
     })
 
 
-    // onMounted(async () => {
-    //   setLocal("text","this is test")
-    //   console.log('get local',getLocal("text"))
-    //   console.log('$web3',$web3)
-    // })
 
 
     return {
