@@ -4,7 +4,7 @@
  * @Author: simpletoyou
  * @Date: 2022-04-21 14:35:01
  * @LastEditors: simpletoyou
- * @LastEditTime: 2022-04-21 15:32:55
+ * @LastEditTime: 2022-04-21 17:34:38
 -->
 <!--
  * 严肃声明：
@@ -17,9 +17,9 @@
 -->
 
 <template>
-  <div class="index">
+  <div class="index" style="margin-top:100px;">
     <p-header />
-    {{ categoryList }}
+    <div>{{ categoryList.length }}</div>
   </div>
 </template>
 
@@ -105,6 +105,6 @@ export default {
 
 <style lang="less" scoped>
 .index {
-  font-size: .16rem;
+  
 }
 </style>

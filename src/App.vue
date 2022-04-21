@@ -4,7 +4,7 @@
  * @Author: simpletoyou
  * @Date: 2022-04-21 11:13:56
  * @LastEditors: simpletoyou
- * @LastEditTime: 2022-04-21 14:36:19
+ * @LastEditTime: 2022-04-21 17:34:26
 -->
 <script setup>
 // This starter template is using Vue 3 <script setup> SFCs
@@ -19,11 +19,13 @@
 </template>
 
 <style>
-body, html {
+body, html,#app {
   margin: 0;
   padding: 0;
+  width: 100%;
+  height: 100%;
+  
   box-sizing: border-box;
-  font-size: 100px;
 }
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
@@ -31,6 +33,5 @@ body, html {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
 }
 </style>
