@@ -1,29 +1,38 @@
+<!--
+ * @Description: 
+ * @version: 
+ * @Author: simpletoyou
+ * @Date: 2022-04-21 14:35:01
+ * @LastEditors: simpletoyou
+ * @LastEditTime: 2022-04-21 15:09:41
+-->
+<!--
+ * 严肃声明：
+ * 开源版本请务必保留此注释头信息，若删除我方将保留所有法律责任追究！
+ * 本系统已申请软件著作权，受国家版权局知识产权以及国家计算机软件著作权保护！
+ * 可正常分享和学习源码，不得用于违法犯罪活动，违者必究！
+ * Copyright (c) 2020 陈尼克 all rights reserved.
+ * 版权所有，侵权必究！
+ *
+-->
 
 <template>
-  <div>
-    {{categoryList}}
+  <div class="index">
+    {{ categoryList }}
   </div>
-    
 </template>
 
 <script>
-import { reactive, onMounted, toRefs } from 'vue'
-import web3 from '@/utils/web3'
-
-
+import { reactive, onMounted, toRefs, getCurrentInstance } from 'vue'
+import { setLocal, getLocal } from '@/common/js/utils'
 
 export default {
   name: 'home',
- 
+
   setup() {
-   
+
     const state = reactive({
-      swiperList: [], // 轮播图列表
-      isLogin: false, // 是否已登录
-      headerScroll: false, // 滚动透明判断
-      hots: [],
-      newGoodses: [],
-      recommends: [],
+
       categoryList: [
         {
           name: '新蜂超市',
@@ -68,11 +77,26 @@ export default {
         }
       ],
     })
-    
-    onMounted(async () => {
 
-      console.log('web3',web3)
+
+    //  const  ii  = getCurrentInstance()
+    //   console.log('ii', ii)
+
+
+
+    onMounted(() => {
+      // 获取绑定在vue原型链变量-$web3
+      const { proxy } = getCurrentInstance();
+      console.log('proxy', proxy.$web3)
+
     })
+
+
+    // onMounted(async () => {
+    //   setLocal("text","this is test")
+    //   console.log('get local',getLocal("text"))
+    //   console.log('$web3',$web3)
+    // })
 
 
     return {
@@ -81,3 +105,9 @@ export default {
   },
 }
 </script>
+
+<style lang="less" scoped>
+.index {
+  font-size: .16rem;
+}
+</style>

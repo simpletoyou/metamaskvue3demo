@@ -4,15 +4,21 @@
  * @Author: simpletoyou
  * @Date: 2022-04-21 11:15:41
  * @LastEditors: simpletoyou
- * @LastEditTime: 2022-04-21 11:49:55
+ * @LastEditTime: 2022-04-21 14:29:14
  */
+
+// window.evmChains: 链列表
 import Web3 from 'web3/dist/web3.min.js';
 
-const web3 = new Web3(window.web3.currentProvider);
+const web3 = window.web3?new Web3(window.web3.currentProvider):null;
 
 window.addEventListener("load", async () => {
+
+  console.log('window-------',window)
+
   // Modern dapp browsers...
   if (window.ethereum) {
+    console.log('Modern dapp browsers')
     window.web3 = new Web3(window.ethereum);
     try {
       // Request account access if needed
@@ -23,6 +29,8 @@ window.addEventListener("load", async () => {
   }
   // Legacy dapp browsers...
   else if (window.web3) {
+    console.log('Legacy dapp browsers')
+
     window.web3 = new Web3(web3.currentProvider);
   }
   // Non-dapp browsers...
