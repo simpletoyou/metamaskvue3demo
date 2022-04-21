@@ -4,7 +4,7 @@
  * @Author: simpletoyou
  * @Date: 2022-04-21 15:21:16
  * @LastEditors: simpletoyou
- * @LastEditTime: 2022-04-21 17:16:53
+ * @LastEditTime: 2022-04-21 19:03:15
  */
 import web3 from '@/utils/web3'
 
@@ -28,6 +28,8 @@ const wModal = new web3Modal({
 
 const init = (async () => {
   console.log('----------------init-------------', web3)
+  console.log('----------------window-------------', window.ethereum)
+  // console.log('小狐狸是否已解锁：', window.ethereum._state.isUnlocked)
   try {
     // 页面初始化查询钱包是否存在连接账号
     if (web3) {
@@ -77,9 +79,38 @@ const connect = (async () => {
 })
 
 
+const disConnect = (async () => {
+  console.log('click to disConnect')
+
+  // await window.ethereum.request({
+  //   method: "disconnect"
+  // })
+
+  // 需要执行小狐狸断开连接
+
+  // window.ethereum.on("disconnect", (res) => {
+  //   console.log('res')
+  // });
+  // try {
+
+  //   // web3._provider.on("disconnect", (res) => {
+  //   //   console.log('------disconnect-------------')
+  //   // })
+
+  //   window.ethereum.on("disconnect", (res) => {
+  //     console.log('------disconnect-------------')
+  //   })
+
+  // } catch (e) {
+  //   return;
+  // }
+})
+
+
 export {
   init,
-  connect
+  connect,
+  disConnect
 }
 
 console.log('---------app-------------', app)

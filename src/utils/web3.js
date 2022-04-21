@@ -4,7 +4,7 @@
  * @Author: simpletoyou
  * @Date: 2022-04-21 11:15:41
  * @LastEditors: simpletoyou
- * @LastEditTime: 2022-04-21 15:25:13
+ * @LastEditTime: 2022-04-21 17:49:39
  */
 
 // window.evmChains: 链列表
@@ -17,6 +17,8 @@ window.addEventListener("load", async () => {
 
   // Modern dapp browsers...
   if (window.ethereum) {
+
+    
     window.web3 = new Web3(window.ethereum);
     try {
       // Request account access if needed
