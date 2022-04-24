@@ -4,10 +4,9 @@
  * @Author: simpletoyou
  * @Date: 2022-04-21 11:15:41
  * @LastEditors: simpletoyou
- * @LastEditTime: 2022-04-22 14:14:01
+ * @LastEditTime: 2022-04-24 18:09:22
  */
 
-// window.evmChains: 链列表
 import Web3 from 'web3/dist/web3.min.js';
 const web3 = window.web3?new Web3(window.web3.currentProvider):null;
 window.addEventListener("load", async () => {

@@ -4,7 +4,7 @@
  * @Author: simpletoyou
  * @Date: 2022-04-21 11:13:56
  * @LastEditors: simpletoyou
- * @LastEditTime: 2022-04-21 17:34:26
+ * @LastEditTime: 2022-04-24 18:07:51
 -->
 <script setup>
 // This starter template is using Vue 3 <script setup> SFCs
@@ -24,7 +24,6 @@ body, html,#app {
   padding: 0;
   width: 100%;
   height: 100%;
-  
   box-sizing: border-box;
 }
 #app {

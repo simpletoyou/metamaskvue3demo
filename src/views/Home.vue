@@ -4,7 +4,7 @@
  * @Author: simpletoyou
  * @Date: 2022-04-21 14:35:01
  * @LastEditors: simpletoyou
- * @LastEditTime: 2022-04-22 11:19:11
+ * @LastEditTime: 2022-04-24 18:50:06
 -->
 <!--
  * 严肃声明：
@@ -27,6 +27,7 @@
 import { reactive, onMounted, toRefs, getCurrentInstance } from 'vue'
 import { setLocal, getLocal } from '@/common/js/utils'
 import pHeader from './PageHeader.vue'
+import MyWeb3 from '@/utils/MyWeb3'
 
 export default {
   name: 'home',
@@ -83,15 +84,37 @@ export default {
       ],
     })
 
+     const { proxy } = getCurrentInstance();
+      console.log('proxy', proxy.$web3)
+
 
 
 
     onMounted(() => {
       // 获取绑定在vue原型链变量-$web3
-      const { proxy } = getCurrentInstance();
-      console.log('proxy', proxy.$web3)
+     
+      console.log('----------MyWeb3---------', MyWeb3)
+
+
+      let ethereum = window.ethereum
+      if (typeof ethereum !== 'undefined' || (typeof window.web3 !== 'undefined')) {
+        MyWeb3.init().then(function (res) {
+         getMyZombies()
+        })
+      } else {
+        alert('You have to install MetaMask !')
+      }
 
     })
+
+
+    const getMyZombies = () => {
+      console.log('getMyZombies')
+        MyWeb3.getZombiesByOwner().then(function(zombies){
+          console.log('zombies',zombies)
+          
+        })
+    }
 
 
 
@@ -104,7 +127,5 @@ export default {
 </script>
 
 <style lang="less" scoped>
-.index {
-  
-}
+.index {}
 </style>
