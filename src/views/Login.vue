@@ -10,6 +10,10 @@
 
 <template>
   <div>LOGIN-------{{ type }}</div>
+  <router-link class="nav-list-item active" to="home">
+    <i class="nbicon nblvsefenkaicankaoxianban-1"></i>
+    <span>Home</span>
+  </router-link>
 </template>
 
 <script>
